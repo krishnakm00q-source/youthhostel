@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Youth Hostel Boys' &amp; Girls' • Patna | Maa Jiya Sarda Niwas</title>
+  <meta name="description" content="Safe, premium and affordable accommodation for boys and girls near Boring Road, Patna at Maa Jiya Sarda Niwas.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Clean, Simple & Premium Sans-Serif Fonts (Inter & Plus Jakarta Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              cream: '#FAF7F2',
+              creamSoft: '#F4EFEB',
+              rosePill: '#FDF2F2',
+              roseBorder: '#ECCECE',
+              roseAccent: '#BA5D66',
+              roseDark: '#9A444C',
+              darkForest: '#16382B',
+              darkForestHover: '#0E271E',
+              charcoal: '#1B2421'
+            }
+          },
+          fontFamily: {
+            sans: ['"Inter"', 'system-ui', '-apple-system', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', '"Inter"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #FAF7F2;
+      color: #1B2421;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, .font-display {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      letter-spacing: -0.02em;
+    }
+
+    /* Hero Section: Bright, beautiful daylight background using user's photo with natural daylight overlays */
+    .hero-container {
+      position: relative;
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background-color: #1a382b;
+    }
+
+    .hero-img-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      z-index: 1;
+      filter: brightness(0.92) contrast(1.05);
+    }
+
+    /* Balanced gradient: readable text on left, building facade visible on right */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: linear-gradient(
+        90deg,
+        rgba(15, 36, 28, 0.92) 0%,
+        rgba(15, 36, 28, 0.82) 42%,
+        rgba(15, 36, 28, 0.52) 75%,
+        rgba(15, 36, 28, 0.28) 100%
+      );
+    }
+
+    @media (max-width: 900px) {
+      .hero-overlay {
+        background: linear-gradient(
+          180deg,
+          rgba(15, 36, 28, 0.94) 0%,
+          rgba(15, 36, 28, 0.86) 60%,
+          rgba(15, 36, 28, 0.70) 100%
+        );
+      }
+    }
+
+    .glass-box {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .room-tab-active {
+      background-color: #16382B !important;
+      color: #FFFFFF !important;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col bg-brand-cream">
+
+  <header class="sticky top-0 z-50 bg-[#FAF7F2]/95 backdrop-blur-md border-b border-brand-roseBorder/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand on Left -->
+      <a href="#home" class="flex items-baseline gap-2 group">
+        <span class="font-display text-xl sm:text-2xl font-extrabold text-brand-darkForest tracking-tight group-hover:text-brand-roseAccent transition-colors">
+          Youth Hostel
+        </span>
+        <span class="text-xs sm:text-sm font-medium text-stone-500 hidden min-[400px]:inline">
+          Boys' &amp; Girls' • Patna
+        </span>
+      </a>
+
+      <!-- Center Navigation Links -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-stone-700">
+        <a href="#home" class="text-brand-darkForest font-bold hover:text-brand-roseAccent transition-colors">Home</a>
+        <a href="#rooms" class="hover:text-brand-darkForest transition-colors">Rooms &amp; Facilities</a>
+        <a href="#gallery" class="hover:text-brand-darkForest transition-colors">Gallery</a>
+        <a href="#contact" class="hover:text-brand-darkForest transition-colors">Contact</a>
+      </nav>
+
+      <!-- Right Side: Star Rating Pill & Call Now Button -->
+      <div class="flex items-center gap-3">
+        <a href="#reviews" class="hidden sm:flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-stone-800 hover:text-brand-darkForest transition px-1">
+          <span class="text-amber-500 text-sm">★</span>
+          <span class="font-bold">4.2</span>
+          <span class="text-stone-400 font-normal">· 480 reviews</span>
+        </a>
+
+        <!-- Working Call Now Button (Direct Tel Dialer) -->
+        <a 
+          href="tel:+918409698676" 
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-darkForest hover:bg-brand-darkForestHover text-white font-semibold text-xs sm:text-sm shadow-sm active:scale-95 transition"
+          title="Direct Call to 8409698676"
+        >
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-emerald-400"></i>
+          <span>Call now</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button 
+          id="mobileMenuBtn" 
+          aria-label="Toggle navigation menu"
+          class="md:hidden p-2 rounded-xl text-stone-700 hover:bg-stone-200/60 active:bg-stone-300 transition"
+        >
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobileDrawer" class="hidden md:hidden bg-[#FAF7F2] border-b border-brand-roseBorder px-5 py-4 space-y-3 shadow-lg">
+      <div class="flex items-center justify-between pb-2 border-b border-brand-roseBorder/60">
+        <span class="text-xs font-bold text-stone-800 flex items-center gap-1">
+          <span class="text-amber-500">★</span> 4.2 · 480 Google reviews
+        </span>
+        <span class="text-[11px] font-bold text-brand-roseAccent bg-brand-rosePill px-2 py-0.5 rounded">Maa Jiya Sarda Niwas</span>
+      </div>
+      <a href="#home" class="mobile-nav-link block text-sm font-semibold text-stone-900 py-1.5">Home</a>
+      <a href="#rooms" class="mobile-nav-link block text-sm font-semibold text-stone-600 hover:text-stone-900 py-1.5">Rooms &amp; Facilities</a>
+      <a href="#gallery" class="mobile-nav-link block text-sm font-semibold text-stone-600 hover:text-stone-900 py-1.5">Gallery</a>
+      <a href="#contact" class="mobile-nav-link block text-sm font-semibold text-stone-600 hover:text-stone-900 py-1.5">Contact &amp; Location</a>
+      <div class="pt-2 grid grid-cols-2 gap-2">
+        <a href="tel:+918409698676" class="py-2.5 rounded-xl bg-brand-darkForest text-white text-center text-xs font-bold flex items-center justify-center gap-1.5 shadow">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-emerald-400"></i> Call Now
+        </a>
+        <a href="https://wa.me/918409698676?text=Hello%20Youth%20Hostel%2C%20I%20want%20to%20know%20about%20room%20availability%20at%20Boring%20Road%20Patna." target="_blank" class="py-2.5 rounded-xl bg-[#25D366] text-white text-center text-xs font-bold flex items-center justify-center gap-1.5 shadow">
+          <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section id="home" class="hero-container py-16 sm:py-20 lg:py-24 text-white">
+    
+    <!-- Exact uploaded hostel photo: Maa Jiya Sarda Niwas building with clean fallback -->
+    <img 
+      id="heroBuildingPhoto"
+      src="ChatGPT Image Sep 21, 2026, 10_51_38 PM.png" 
+      alt="Maa Jiya Sarda Niwas Youth Hostel Patna" 
+      class="hero-img-bg"
+      onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=1800&q=85';"
+    >
+
+    <!-- Overlay ensuring legibility while keeping the building bright & visible -->
+    <div class="hero-overlay"></div>
+
+    <!-- Hero Content Layout -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
+        
+        <!-- Left Column: Headlines & Call Actions -->
+        <div class="lg:col-span-8 max-w-2xl space-y-6">
+          
+          <!-- Rating badge chip -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white text-stone-900 text-xs font-bold shadow-md">
+            <span class="text-amber-500 text-sm leading-none">★</span>
+            <span>4.2 · 480 Google reviews</span>
+          </div>
+
+          <!-- Hero Headline -->
+          <h1 class="font-display text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12]">
+            A home away from home in Patna
+          </h1>
+
+          <!-- Hero Subtitle -->
+          <p class="text-stone-200 text-sm sm:text-base lg:text-lg font-normal leading-relaxed max-w-xl">
+            Safe and affordable accommodation for boys &amp; girls near Boring Road with homestyle food, study-friendly spaces and a caring warden.
+          </p>
+
+          <!-- Buttons matching reference screenshot -->
+          <div class="pt-2 flex flex-wrap items-center gap-3.5">
+            <!-- Functional 079790 34351 Dialer -->
+            <a 
+              href="tel:07979034351" 
+              class="px-6 py-3.5 rounded-full bg-brand-darkForest hover:bg-brand-darkForestHover text-white font-semibold text-xs sm:text-sm tracking-wide flex items-center gap-2.5 shadow-lg border border-white/20 transition transform hover:-translate-y-0.5 active:scale-95"
+            >
+              <i data-lucide="phone" class="w-4 h-4 text-emerald-400"></i>
+              <span>079790 34351</span>
+            </a>
+
+            <!-- Scroll to rooms & facilities -->
+            <a 
+              href="#rooms" 
+              class="px-6 py-3.5 rounded-full glass-box hover:bg-white/20 text-white font-semibold text-xs sm:text-sm tracking-wide flex items-center gap-2 transition transform hover:-translate-y-0.5"
+            >
+              <span>See rooms &amp; facilities</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Facilities checklist card -->
+        <div class="lg:col-span-4 flex flex-col items-start lg:items-end justify-end space-y-3 w-full">
+          
+          <div class="glass-box rounded-2xl p-5 text-xs text-white space-y-3 w-full max-w-xs shadow-2xl">
+            <div class="flex items-center gap-3">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+              <span class="font-semibold text-sm">Clean Rooms</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+              <span class="font-semibold text-sm">Safe &amp; Secure</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <i data-lucide="wifi" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+              <span class="font-semibold text-sm">Wi-Fi</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <i data-lucide="utensils" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+              <span class="font-semibold text-sm">Healthy Food</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <i data-lucide="clock" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+              <span class="font-semibold text-sm">24x7 Support</span>
+            </div>
+          </div>
+
+          <!-- Building Tag -->
+          <div class="px-4 py-2 rounded-xl bg-black/60 backdrop-blur-md border border-white/10 text-[11px] text-stone-200 flex items-center gap-2">
+            <i data-lucide="building-2" class="w-3.5 h-3.5 text-brand-roseAccent"></i>
+            <span>Maa Jiya Sarda Niwas • Boring Road</span>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-[#FAF7F2] border-b border-brand-roseBorder/60 py-10 lg:py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
+        
+        <!-- Highlight 1: Prime Location -->
+        <div class="flex items-start gap-4">
+          <div class="w-11 h-11 rounded-full bg-brand-rosePill text-brand-roseAccent flex items-center justify-center shrink-0 mt-0.5 border border-brand-roseBorder">
+            <i data-lucide="map-pin" class="w-5 h-5"></i>
+          </div>
+          <div class="space-y-1">
+            <h2 class="text-base font-bold text-stone-900 font-display tracking-tight">Prime location</h2>
+            <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+              Boring Road, near Pani Tanki — well connected to colleges and coaching centres.
+            </p>
+          </div>
+        </div>
+
+        <!-- Highlight 2: Open 24 hours -->
+        <div class="flex items-start gap-4">
+          <div class="w-11 h-11 rounded-full bg-brand-rosePill text-brand-roseAccent flex items-center justify-center shrink-0 mt-0.5 border border-brand-roseBorder">
+            <i data-lucide="clock" class="w-5 h-5"></i>
+          </div>
+          <div class="space-y-1">
+            <h2 class="text-base font-bold text-stone-900 font-display tracking-tight">Open 24 hours</h2>
+            <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+              Reception and security round the clock, so late trains and late study nights are never a problem.
+            </p>
+          </div>
+        </div>
+
+        <!-- Highlight 3: Boys' & girls' wings -->
+        <div class="flex items-start gap-4">
+          <div class="w-11 h-11 rounded-full bg-brand-rosePill text-brand-roseAccent flex items-center justify-center shrink-0 mt-0.5 border border-brand-roseBorder">
+            <i data-lucide="shield-check" class="w-5 h-5"></i>
+          </div>
+          <div class="space-y-1">
+            <h2 class="text-base font-bold text-stone-900 font-display tracking-tight">Boys' &amp; girls' wings</h2>
+            <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+              Safe, managed accommodation for both boys and girls under one trusted management.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="rooms" class="py-16 lg:py-20 bg-brand-creamSoft/70 border-b border-brand-roseBorder/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header with Tabs -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-5">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-roseAccent block mb-1">
+            Accommodations
+          </span>
+          <h2 class="font-display text-2xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">
+            Single, Double &amp; Triple Seater
+          </h2>
+          <p class="text-xs sm:text-sm text-stone-600 mt-2 max-w-xl">
+            "Best Hostel in Patna, Single Seater , Double Seater, Triple Seater". Click an enquiry button to chat instantly on WhatsApp with pre-configured questions.
+          </p>
+        </div>
+
+        <!-- Filter tabs -->
+        <div class="inline-flex p-1 rounded-2xl bg-white border border-brand-roseBorder shadow-sm self-start md:self-auto">
+          <button onclick="filterRooms('all')" id="btn-tab-all" class="room-tab-btn room-tab-active px-4 py-2 rounded-xl text-xs font-bold transition">
+            All Rooms
+          </button>
+          <button onclick="filterRooms('single')" id="btn-tab-single" class="room-tab-btn px-4 py-2 rounded-xl text-xs font-semibold text-stone-600 hover:text-stone-900 transition">
+            Single Seater
+          </button>
+          <button onclick="filterRooms('double')" id="btn-tab-double" class="room-tab-btn px-4 py-2 rounded-xl text-xs font-semibold text-stone-600 hover:text-stone-900 transition">
+            Double Seater
+          </button>
+          <button onclick="filterRooms('triple')" id="btn-tab-triple" class="room-tab-btn px-4 py-2 rounded-xl text-xs font-semibold text-stone-600 hover:text-stone-900 transition">
+            Triple Seater
+          </button>
+        </div>
+      </div>
+
+      <!-- Room Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        
+        <!-- CARD 1: SINGLE SEATER (1 Bed) -->
+        <div class="room-item bg-white rounded-3xl border border-brand-roseBorder overflow-hidden shadow-sm hover:shadow-lg transition duration-300 flex flex-col justify-between" data-category="single">
+          <div>
+            <div class="relative h-56 overflow-hidden bg-stone-100 group">
+              <img 
+                src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80" 
+                alt="Single Seater Room Patna" 
+                class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                onerror="this.src='https://placehold.co/800x600/FAF7F2/16382B?text=Single+Seater+Room';"
+              >
+              <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-brand-darkForest text-white text-[11px] font-bold shadow">
+                Single Seater (1 Bed)
+              </div>
+              <div class="absolute bottom-3 right-3 px-2.5 py-1 rounded-lg bg-black/70 backdrop-blur-sm text-white text-[11px] font-medium">
+                Homestyle Food Included
+              </div>
+            </div>
+
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-1">
+                <h3 class="font-display text-xl sm:text-2xl font-bold text-stone-900">Single Seater</h3>
+                <span class="text-xs font-bold text-brand-roseAccent bg-brand-rosePill px-2.5 py-1 rounded-full">Private</span>
+              </div>
+              <p class="text-xs text-stone-500 mb-4">Dedicated private room for undisturbed study and complete focus.</p>
+
+              <div class="space-y-2.5 text-xs text-stone-700 pb-4 border-b border-brand-roseBorder/60">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                  <span>Single bed with clean mattress &amp; pillow</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                  <span>Independent study table, chair &amp; book rack</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                  <span>Personal wardrobe with lock &amp; key</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                  <span>High-speed Wi-Fi and 24/7 power backup</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- WhatsApp Enquiry Button with Custom Pre-filled Text -->
+          <div class="p-6 pt-0 space-y-2">
+            <a 
+              href="https://wa.me/918409698676?text=Hello%20Youth%20Hostel%2C%20I%20want%20to%20know%20about%20this%201%20bed%20room%20availability%20and%20details." 
+              target="_blank"
+              class="w-full py-3.5 px-4 rounded-xl bg-brand-darkForest hover:bg-brand-darkForestHover text-white font-semibold text-xs flex items-center justify-center gap-2 transition shadow-sm active:scale-95"
+            >
+              <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
+              <span>Enquire on WhatsApp (1 Bed)</span>
+            </a>
+            <a 
+              href="tel:8409698676"
+              class="w-full py-2 px-3 rounded-lg border border-stone-200 text-stone-600 hover:text-stone-900 text-[11px] font-medium flex items-center justify-center gap-1.5 transition"
+            >
+              <i data-lucide="phone" class="w-3 h-3 text-stone-500"></i>
+              <span>Call: 8409698676</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 2: DOUBLE SEATER (2 Bed) -->
+        <div class="room-item bg-white rounded-3xl border-2 border-brand-roseAccent overflow-hidden shadow-sm hover:shadow-lg transition duration-300 flex flex-col justify-between relative" data-category="double">
+          <div class="absolute top-0 right-6 bg-brand-roseAccent text-white text-[10px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-b-xl shadow-sm z-10">
+            Most Popular
+          </div>
+
+          <div>
+            <div class="relative h-56 overflow-hidden bg-stone-100 group">
+              <img 
+                src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80" 
+                alt="Double Seater 2 Bed Room Patna" 
+                class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                onerror="this.src='https://placehold.co/800x600/FAF7F2/BA5D66?text=Double+Seater+Room';"
+              >
+              <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-brand-roseDark text-white text-[11px] font-bold shadow">
+                Double Seater (2 Bed)
+              </div>
+              <div class="absolute bottom-3 right-3 px-2.5 py-1 rounded-lg bg-black/70 backdrop-blur-sm text-white text-[11px] font-medium">
+                Comfortable Sharing
+              </div>
+            </div>
+
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-1">
+                <h3 class="font-display text-xl sm:text-2xl font-bold text-stone-900">Double Seater</h3>
+                <span class="text-xs font-bold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-full">Shared</span>
+              </div>
+              <p class="text-xs text-stone-500 mb-4">Spacious room for two with separate study desks and storage units.</p>
+
+              <div class="space-y-2.5 text-xs text-stone-700 pb-4 border-b border-brand-roseBorder/60">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                  <span>2 Separate beds with comfortable bedding</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                  <span>2 Individual study tables &amp; charging sockets</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                  <span>2 Lockable cupboards for personal belongings</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                  <span>Daily room cleaning and sanitization</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- WhatsApp Enquiry Button for 2 Bed (Custom message) -->
+          <div class="p-6 pt-0 space-y-2">
+            <a 
+              href="https://wa.me/918409698676?text=Hello%20Youth%20Hostel%2C%20I%20want%20to%20know%20about%20this%202%20bed%20room%20availability%20and%20details." 
+              target="_blank"
+              class="w-full py-3.5 px-4 rounded-xl bg-brand-roseAccent hover:bg-brand-roseDark text-white font-semibold text-xs flex items-center justify-center gap-2 transition shadow-sm active:scale-95"
+            >
+              <i data-lucide="message-circle" class="w-4 h-4 text-white"></i>
+              <span>Enquire on WhatsApp (2 Bed)</span>
+            </a>
+            <a 
+              href="tel:8409698676"
+              class="w-full py-2 px-3 rounded-lg border border-brand-roseBorder text-stone-700 hover:text-stone-900 text-[11px] font-medium flex items-center justify-center gap-1.5 transition"
+            >
+              <i data-lucide="phone" class="w-3 h-3 text-brand-roseAccent"></i>
+              <span>Call: 8409698676</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 3: TRIPLE SEATER (3 Bed) -->
+        <div class="room-item bg-white rounded-3xl border border-brand-roseBorder overflow-hidden shadow-sm hover:shadow-lg transition duration-300 flex flex-col justify-between" data-category="triple">
+          <div>
+            <div class="relative h-56 overflow-hidden bg-stone-100 group">
+              <img 
+                src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80" 
+                alt="Triple Seater 3 Bed Room Patna" 
+                class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                onerror="this.src='https://placehold.co/800x600/FAF7F2/16382B?text=Triple+Seater+Room';"
+              >
+              <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-stone-800 text-white text-[11px] font-bold shadow">
+                Triple Seater (3 Bed)
+              </div>
+              <div class="absolute bottom-3 right-3 px-2.5 py-1 rounded-lg bg-black/70 backdrop-blur-sm text-white text-[11px] font-medium">
+                Best Value
+              </div>
+            </div>
+
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-1">
+                <h3 class="font-display text-xl sm:text-2xl font-bold text-stone-900">Triple Seater</h3>
+                <span class="text-xs font-bold text-stone-700 bg-stone-100 px-2.5 py-1 rounded-full">Budget</span>
+              </div>
+              <p class="text-xs text-stone-500 mb-4">Economical accommodation equipped with individual study zones.</p>
+
+              <div class="space-y-2.5 text-xs text-stone-700 pb-4 border-b border-brand-roseBorder/60">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                  <span>3 Individual beds + personal mattresses</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                  <span>3 Dedicated study tables &amp; lights</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                  <span>4-Times fresh hygienic meals served daily</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                  <span>Filtered RO drinking water &amp; geysers</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- WhatsApp Enquiry Button for 3 Bed (Custom message) -->
+          <div class="p-6 pt-0 space-y-2">
+            <a 
+              href="https://wa.me/918409698676?text=Hello%20Youth%20Hostel%2C%20I%20want%20to%20know%20about%20this%203%20bed%20room%20availability%20and%20details." 
+              target="_blank"
+              class="w-full py-3.5 px-4 rounded-xl bg-brand-darkForest hover:bg-brand-darkForestHover text-white font-semibold text-xs flex items-center justify-center gap-2 transition shadow-sm active:scale-95"
+            >
+              <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
+              <span>Enquire on WhatsApp (3 Bed)</span>
+            </a>
+            <a 
+              href="tel:8409698676"
+              class="w-full py-2 px-3 rounded-lg border border-stone-200 text-stone-600 hover:text-stone-900 text-[11px] font-medium flex items-center justify-center gap-1.5 transition"
+            >
+              <i data-lucide="phone" class="w-3 h-3 text-stone-500"></i>
+              <span>Call: 8409698676</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="reviews" class="py-16 bg-[#FAF7F2] border-b border-brand-roseBorder/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-roseAccent block mb-1">
+            Reviews
+          </span>
+          <h2 class="font-display text-2xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">
+            Google &amp; Web Reviews
+          </h2>
+          <p class="text-xs sm:text-sm text-stone-500 mt-1">Real feedback from resident students and parents.</p>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <div class="px-3.5 py-2 rounded-xl bg-white border border-brand-roseBorder flex items-center gap-2 text-xs font-bold shadow-sm">
+            <span class="text-amber-500 text-sm">★</span>
+            <span>4.2 / 5.0</span>
+            <span class="text-stone-400 font-normal">· 480 Google reviews</span>
+          </div>
+          <div class="px-3.5 py-2 rounded-xl bg-white border border-brand-roseBorder flex items-center gap-2 text-xs font-bold shadow-sm">
+            <span class="text-blue-600 font-bold">Jd</span>
+            <span>4 / 5</span>
+            <span class="text-stone-400 font-normal">· 499 votes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Review 1 -->
+        <div class="bg-white p-6 rounded-3xl border border-brand-roseBorder shadow-sm flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="text-amber-500 text-xs tracking-wider">★★★★★</div>
+            <p class="text-xs sm:text-sm text-stone-800 leading-relaxed font-normal">
+              "Friendly staff &amp; Wardan , supper quality of food and perfect timeing to serve."
+            </p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-brand-roseBorder/40 flex items-center justify-between text-[11px] text-stone-500">
+            <span class="font-semibold text-stone-700">Google Reviewer</span>
+            <span class="text-emerald-700 font-medium">Verified Stay</span>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="bg-white p-6 rounded-3xl border border-brand-roseBorder shadow-sm flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="text-amber-500 text-xs tracking-wider">★★★★★</div>
+            <p class="text-xs sm:text-sm text-stone-800 leading-relaxed font-normal">
+              "Good experience affordable price nice service"
+            </p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-brand-roseBorder/40 flex items-center justify-between text-[11px] text-stone-500">
+            <span class="font-semibold text-stone-700">Google Reviewer</span>
+            <span class="text-emerald-700 font-medium">Verified Stay</span>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="bg-white p-6 rounded-3xl border border-brand-roseBorder shadow-sm flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="text-amber-500 text-xs tracking-wider">★★★★★</div>
+            <p class="text-xs sm:text-sm text-stone-800 leading-relaxed font-normal">
+              "Best management very good food quality best environment 👍👍"
+            </p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-brand-roseBorder/40 flex items-center justify-between text-[11px] text-stone-500">
+            <span class="font-semibold text-stone-700">Google Reviewer</span>
+            <span class="text-emerald-700 font-medium">Verified Stay</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="gallery" class="py-16 bg-brand-creamSoft/50 border-b border-brand-roseBorder/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-roseAccent block mb-1">
+          Gallery
+        </span>
+        <h2 class="font-display text-2xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">
+          Hostel Life &amp; Surroundings
+        </h2>
+        <p class="text-xs sm:text-sm text-stone-500 mt-1">
+          A glimpse into the daily student lifestyle, mess facilities, and calm study ambiance.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <!-- Gallery 1: Building Photo / Exterior -->
+        <div class="relative group rounded-2xl overflow-hidden shadow-sm border border-brand-roseBorder bg-stone-100 aspect-[4/3]">
+          <img 
+            src="ChatGPT Image Sep 21, 2026, 10_51_38 PM.png" 
+            alt="Maa Jiya Sarda Niwas Exterior" 
+            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=700&q=80';"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent p-4 flex flex-col justify-end text-white text-xs font-bold">
+            Maa Jiya Sarda Niwas
+          </div>
+        </div>
+
+        <!-- Gallery 2: Dining & Mess -->
+        <div class="relative group rounded-2xl overflow-hidden shadow-sm border border-brand-roseBorder bg-stone-100 aspect-[4/3]">
+          <img 
+            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=700&q=80" 
+            alt="Hostel Food Mess" 
+            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+            onerror="this.src='https://placehold.co/700x500/FAF7F2/16382B?text=Hygienic+Dining';"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent p-4 flex flex-col justify-end text-white text-xs font-bold">
+            Hygienic Dining
+          </div>
+        </div>
+
+        <!-- Gallery 3: Study Spaces -->
+        <div class="relative group rounded-2xl overflow-hidden shadow-sm border border-brand-roseBorder bg-stone-100 aspect-[4/3]">
+          <img 
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=700&q=80" 
+            alt="Study Hall" 
+            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+            onerror="this.src='https://placehold.co/700x500/FAF7F2/16382B?text=Quiet+Study+Space';"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent p-4 flex flex-col justify-end text-white text-xs font-bold">
+            Quiet Study Space
+          </div>
+        </div>
+
+        <!-- Gallery 4: Clean, Working Security & Warden Visual -->
+        <div class="relative group rounded-2xl overflow-hidden shadow-sm border border-brand-roseBorder bg-stone-100 aspect-[4/3]">
+          <img 
+            src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=700&q=80" 
+            alt="Hostel Management & Security" 
+            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+            onerror="this.src='https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=700&q=80';"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent p-4 flex flex-col justify-end text-white text-xs font-bold">
+            24×7 Security &amp; Warden
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="py-16 bg-[#FAF7F2]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Address & Details Card -->
+        <div class="lg:col-span-5 bg-white p-6 sm:p-8 rounded-3xl border border-brand-roseBorder shadow-sm space-y-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-brand-roseAccent block mb-1">
+              Contact &amp; Location
+            </span>
+            <h3 class="font-display text-2xl sm:text-3xl font-extrabold text-stone-900 tracking-tight">
+              Youth Boys' &amp; Girls' Hostel
+            </h3>
+            <p class="text-xs text-stone-500 mt-1">Maa Jiya Sarda / Sarita Niwas • Boring Road</p>
+          </div>
+
+          <div class="space-y-4 text-xs sm:text-sm text-stone-700">
+            
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-xl bg-brand-rosePill text-brand-roseAccent flex items-center justify-center shrink-0 mt-0.5 border border-brand-roseBorder/60">
+                <i data-lucide="map-pin" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <strong class="block text-stone-900 font-bold">Address:</strong>
+                <span class="leading-relaxed">J4C3+4QH Maa Jiya sartita niwas, Boring Rd, near Pani Tanki, Mahesh Nagar, Keshri Nagar, Patna, Bihar 800024</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-xl bg-brand-rosePill text-brand-roseAccent flex items-center justify-center shrink-0 mt-0.5 border border-brand-roseBorder/60">
+                <i data-lucide="phone-call" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <strong class="block text-stone-900 font-bold">Phone Numbers:</strong>
+                <div class="mt-1 space-y-1">
+                  <!-- Direct Working Call Links -->
+                  <a href="tel:8409698676" class="text-brand-roseAccent hover:underline font-bold block text-sm">Primary / WhatsApp: 8409698676</a>
+                  <a href="tel:07979034351" class="text-brand-darkForest hover:underline font-semibold block text-sm">Hostel Desk: 079790 34351</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-xl bg-brand-rosePill text-brand-roseAccent flex items-center justify-center shrink-0 mt-0.5 border border-brand-roseBorder/60">
+                <i data-lucide="clock" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <strong class="block text-stone-900 font-bold">Hours:</strong>
+                <span class="inline-block text-emerald-800 font-bold bg-emerald-50 px-2.5 py-0.5 rounded-full text-xs mt-0.5">Open 24 hours</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="pt-2 flex flex-col sm:flex-row gap-3">
+            <a 
+              href="https://www.google.com/maps/search/?api=1&query=Maa+Jiya+Sarita+Niwas+Boring+Rd+near+Pani+Tanki+Patna" 
+              target="_blank" 
+              class="flex-1 py-3 px-4 rounded-xl bg-brand-darkForest hover:bg-brand-darkForestHover text-white text-xs font-bold text-center flex items-center justify-center gap-2 shadow active:scale-95 transition"
+            >
+              <i data-lucide="navigation" class="w-3.5 h-3.5"></i>
+              <span>Directions</span>
+            </a>
+            <a 
+              href="https://wa.me/918409698676?text=Hello%20Youth%20Hostel%2C%20please%20send%20the%20exact%20location%20and%20directions%20to%20Maa%20Jiya%20Sarda%20Niwas." 
+              target="_blank" 
+              class="flex-1 py-3 px-4 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white text-xs font-bold text-center flex items-center justify-center gap-2 shadow active:scale-95 transition"
+            >
+              <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+              <span>WhatsApp Location</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Google Map Container -->
+        <div class="lg:col-span-7 bg-white rounded-3xl border border-brand-roseBorder overflow-hidden shadow-sm">
+          <div class="p-4 bg-brand-creamSoft border-b border-brand-roseBorder flex items-center justify-between text-xs text-stone-600">
+            <span class="font-bold text-stone-800">Mahesh Nagar, Boring Road • Patna</span>
+            <span class="font-semibold text-brand-roseAccent">Open 24 Hours</span>
+          </div>
+          <div class="w-full h-80 sm:h-96">
+            <iframe 
+              title="Youth Hostel Boring Road Patna Location"
+              class="w-full h-full border-0"
+              src="https://maps.google.com/maps?q=Boring+Road+near+Pani+Tanki+Mahesh+Nagar+Patna&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#142A20] text-stone-300 mt-auto border-t-2 border-brand-roseAccent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        
+        <div class="space-y-1 text-center md:text-left">
+          <p class="font-display text-lg font-bold text-white tracking-tight">Youth Boys' &amp; Girls' Hostel</p>
+          <p class="text-xs text-stone-400">Maa Jiya Sarda Niwas, Boring Rd, near Pani Tanki, Mahesh Nagar, Patna 800024</p>
+        </div>
+
+        <div class="flex items-center gap-5 text-xs text-stone-400">
+          <a href="tel:8409698676" class="hover:text-emerald-400 font-semibold transition">Call: 8409698676</a>
+          <span>•</span>
+          <a href="tel:07979034351" class="hover:text-white transition">079790 34351</a>
+          <span>•</span>
+          <a href="https://wa.me/918409698676" target="_blank" class="hover:text-emerald-400 transition">WhatsApp</a>
+        </div>
+
+      </div>
+
+      <div class="mt-6 pt-5 border-t border-white/10 text-center text-[11px] text-stone-400">
+        © 2026 Youth Hostel Patna. Single Seater, Double Seater, Triple Seater accommodations.
+      </div>
+    </div>
+  </footer>
+
+  <div class="fixed bottom-5 right-4 sm:right-6 z-50 flex flex-col items-end gap-3">
+    
+    <!-- Floating Direct Phone Call Button -->
+    <a 
+      href="tel:8409698676" 
+      class="flex items-center gap-2 px-3.5 py-3 sm:px-4 sm:py-3 rounded-full bg-brand-darkForest hover:bg-brand-darkForestHover text-white shadow-xl transition transform hover:scale-105 active:scale-95 border border-white/20"
+      title="Call: 8409698676"
+    >
+      <i data-lucide="phone" class="w-4 h-4 text-emerald-400"></i>
+      <span class="text-xs font-bold tracking-wide">
+        Call 8409698676
+      </span>
+    </a>
+
+    <!-- Floating WhatsApp Action Button with Pulse -->
+    <a 
+      href="https://wa.me/918409698676?text=Hello%20Youth%20Hostel%2C%20I%20want%20to%20know%20about%20room%20availability%20at%20Boring%20Road%20Patna." 
+      target="_blank" 
+      class="relative flex items-center gap-2 px-3.5 py-3 sm:px-4 sm:py-3 rounded-full bg-[#25D366] hover:bg-[#1EBE5D] text-white shadow-xl transition transform hover:scale-105 active:scale-95"
+      title="WhatsApp: 8409698676"
+    >
+      <span class="absolute -top-1 -right-1 flex h-3 w-3">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-200 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-400"></span>
+      </span>
+
+      <!-- WhatsApp SVG Icon -->
+      <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-current" viewBox="0 0 24 24">
+        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.777.78 2.796.78 3.18 0 5.767-2.586 5.767-5.766.001-3.18-2.585-5.766-5.767-5.766zm9.969 5.766c0 5.518-4.482 10-10 10-1.748 0-3.385-.45-4.819-1.238l-5.181 1.36 1.385-5.059c-.896-1.503-1.385-3.238-1.385-5.063 0-5.518 4.482-10 10-10s10 4.482 10 10z"/>
+      </svg>
+      <span class="text-xs font-bold tracking-wide">
+        WhatsApp
+      </span>
+    </a>
+
+  </div>
+
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Mobile Drawer Navigation Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+
+    if (mobileMenuBtn && mobileDrawer) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileDrawer.classList.toggle('hidden');
+      });
+
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileDrawer.classList.add('hidden');
+        });
+      });
+    }
+
+    // Room Filtering Function (Single, Double, Triple)
+    function filterRooms(type) {
+      const cards = document.querySelectorAll('.room-item');
+      const tabs = document.querySelectorAll('.room-tab-btn');
+
+      tabs.forEach(tab => {
+        tab.classList.remove('room-tab-active', 'bg-brand-darkForest', 'text-white');
+        tab.classList.add('text-stone-600');
+      });
+
+      const activeTab = document.getElementById(`btn-tab-${type}`);
+      if (activeTab) {
+        activeTab.classList.add('room-tab-active', 'bg-brand-darkForest', 'text-white');
+        activeTab.classList.remove('text-stone-600');
+      }
+
+      cards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        if (type === 'all' || category === type) {
+          card.classList.remove('hidden');
+          card.classList.add('flex');
+        } else {
+          card.classList.add('hidden');
+          card.classList.remove('flex');
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
